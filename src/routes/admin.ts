@@ -4,5 +4,6 @@ import { getDashboard } from '../controllers/adminController';
 
 export const adminRouter = Router();
 
-adminRouter.use(authenticate, authorize('admin'));
+adminRouter.use(authenticate as any);
+adminRouter.use(authorize('admin') as any);
 adminRouter.get('/dashboard', getDashboard);

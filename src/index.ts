@@ -1,5 +1,5 @@
 import express from 'express';
-import { createConnection } from 'typeorm';
+import { createConnection, DataSource } from 'typeorm';
 import { authRouter } from './routes/auth';
 import { adminRouter } from './routes/admin';
 import { errorHandler } from './middlewares/errorHandler';
@@ -12,7 +12,7 @@ app.use('/auth', authRouter);
 app.use('/admin', adminRouter);
 app.use(errorHandler);
 
-createConnection(config.database).then(() => {
+createConnection(config.database).then((connection: DataSource) => {
   app.listen(config.port, () => {
     console.log(`Server running on port ${config.port}`);
   });

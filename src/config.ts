@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import { DataSourceOptions } from 'typeorm';
 
 dotenv.config();
 
@@ -14,5 +15,5 @@ export const config = {
     database: process.env.DB_NAME || 'admin_auth',
     entities: ['src/entities/*.ts'],
     synchronize: true,
-  },
+  } as DataSourceOptions,
 };

@@ -5,24 +5,24 @@ import bcrypt from 'bcrypt';
 @Entity()
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
   @IsEmail()
-  email: string;
+  email!: string;
 
   @Column()
   @MinLength(8)
-  password: string;
+  password!: string;
 
   @Column({ default: 'user' })
-  role: 'user' | 'admin';
+  role!: 'user' | 'admin';
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   async hashPassword() {
     this.password = await bcrypt.hash(this.password, 10);
