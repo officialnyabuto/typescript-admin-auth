@@ -32,8 +32,8 @@ A robust, secure authentication system built with TypeScript, featuring JWT auth
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/officialnyabuto/ts-auth-system.git
-cd ts-auth-system
+git clone https://github.com/officialnyabuto/typescript-admin-auth.git
+cd typescript-admin-auth
 ```
 
 2. Install dependencies:
